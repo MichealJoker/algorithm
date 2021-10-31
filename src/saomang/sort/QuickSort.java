@@ -6,6 +6,8 @@ import java.util.Arrays;
  * @author: jzh
  * @date: created in 2021/10/31
  * @description: 快速排序
+ *  时间复杂度：平均情况 N * logN   最坏的时候是N^2
+ *  空间复杂度   logN
  * @version: 1.0
  */
 public class QuickSort {
@@ -30,8 +32,8 @@ public class QuickSort {
         int pivot = arr[rightBound];
         int left = leftBound;
         int right = rightBound - 1;
-        while (left < right) {
-            while (left <= right && arr[left] < pivot) left++;
+        while (left <= right) {
+            while (left <= right && arr[left] <= pivot) left++;
             while (left <= right && arr[right] > pivot) right--;
             if (left < right) {
                 swap(arr, left, right);
