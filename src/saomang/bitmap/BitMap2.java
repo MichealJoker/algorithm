@@ -95,8 +95,15 @@ public class BitMap2 {
             if (b == negNum(1)) {
                 return Integer.MAX_VALUE;
             } else {
+                // -20 ~  19    假设-20代表负最大
+                // -19/5  =  -3
                 int c = div(add(a, 1), b);
-                return add(c, div(minus(a, multi(c, b)), b));
+                //   -20 + (-3 x 5) = -5
+                //    -5 / 5 = -1
+                //  return  -3 + -1
+                return add(c,
+                        div(
+                                minus(a, multi(c, b) )  , b)   );
             }
         } else {
             return div(a, b);
