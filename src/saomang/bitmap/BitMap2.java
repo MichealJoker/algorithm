@@ -17,7 +17,9 @@ public class BitMap2 {
 
         System.out.println(add(a,b));
         System.out.println(minus(a,b));
-        System.out.println(mult(a,b));
+        System.out.println(multi(a,b));
+        System.out.println(divide(a,b));
+        System.out.println(qumo(a,b));
     }
 
     public static int add(int a, int b) {
@@ -44,7 +46,7 @@ public class BitMap2 {
      *  x  0111
      * =  0110  +  01100 +  011000
      */
-    public static int mult(int a, int b) {
+    public static int multi(int a, int b) {
         int sum = 0;
         while (b != 0) {
             int c = b & 1;
@@ -56,4 +58,73 @@ public class BitMap2 {
         }
         return sum;
     }
+
+    public static boolean isNeg(int n) {
+        return n < 0;
+    }
+
+    /**
+     *   11000
+     * / 00011
+     */
+    public static int div(int a, int b) {
+        int x = isNeg(a) ? negNum(a) : a;
+        int y = isNeg(b) ? negNum(b) : b;
+        int res = 0;
+        for (int i = 30; i >= 0; i = minus(i, 1)) {
+            if ((x >> i) >= y) {
+                res |= (1 << i);
+                x = minus(x, y << i);
+            }
+        }
+        return isNeg(a) ^ isNeg(b) ? negNum(res) : res;
+    }
+
+    /**
+     * https://leetcode.com/problems/divide-two-integers
+     * @param a
+     * @param b
+     * @return
+     */
+    public static int divide(int a, int b) {
+        if (a == Integer.MIN_VALUE && b == Integer.MIN_VALUE) {
+            return 1;
+        } else if (b == Integer.MIN_VALUE) {
+            return 0;
+        } else if (a == Integer.MIN_VALUE) {
+            if (b == negNum(1)) {
+                return Integer.MAX_VALUE;
+            } else {
+                int c = div(add(a, 1), b);
+                return add(c, div(minus(a, multi(c, b)), b));
+            }
+        } else {
+            return div(a, b);
+        }
+    }
+
+
+    public static int qumo(int a, int b) {
+        int x = isNeg(a) ? negNum(a) : a;
+        int y = isNeg(b) ? negNum(b) : b;
+        int res = 0;
+        for (int i = 30; i >= 0; i = minus(i, 1)) {
+            if ((x >> i) >= y) {
+                res |= (1 << i);
+                x = minus(x, y << i);
+            }
+        }
+        return x;
+    }
+
+
+    /**
+     * 取反值
+     * @param n
+     * @return
+     */
+    public static int negNum(int n) {
+        return add(~n, 1);
+    }
+
 }
