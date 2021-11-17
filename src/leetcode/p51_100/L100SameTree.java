@@ -9,7 +9,7 @@ package leetcode.p51_100;
  *          中序：左头右
  *          后序：左右头
  */
-public class SameTree100 {
+public class L100SameTree {
 
     public static class TreeNode {
         public int val;
