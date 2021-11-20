@@ -1,7 +1,7 @@
 package leetcode.p51_100;
 
 /**
- * @author: jzh
+ * @author: jzh 二叉树题
  * @date: created in 2021/11/14
  * @description: 100. 相同的树  https://leetcode-cn.com/problems/same-tree
  * @version: 1.0
