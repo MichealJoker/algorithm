@@ -1,8 +1,5 @@
 package leetcode.p51_100;
 
-import jdk.nashorn.internal.objects.NativeUint8Array;
-import sun.reflect.generics.tree.Tree;
-
 /**
  * @author: jzh
  * @date: created in 2021/12/1
