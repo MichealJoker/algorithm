@@ -20,9 +20,9 @@ public class miaoshenshi implements Runnable{
     int page;
 
     public static void main(String[] args) {
-        String title= "[アキレルショウジョ (アキレ)] 僕だけに甘えさせてくれる巨乳Jk妻を他の男に抱かせてみた 5";
-        String photo = "https://i1.pthcdn.xyz/galleries/2012452/";
-        int num = 41;
+        String title= "[てこめんち] パチュリー・ノーレッジ快発記録II";
+        String photo = "https://i1.qthcdn.xyz/galleries/2054176/";
+        int num = 30;
         ExecutorService executorService = Executors.newFixedThreadPool(4);
         miaoshenshi m1 = new miaoshenshi();
         m1.name = title;
