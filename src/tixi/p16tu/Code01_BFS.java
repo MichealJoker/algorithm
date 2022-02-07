@@ -1,5 +1,10 @@
 package tixi.p16tu;
 
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
+
 /**
  * @description:
  * @author: 姜志豪
@@ -16,5 +21,37 @@ public class Code01_BFS {
     // 3，每弹出一个点，把该节点所有没有进过队列的邻接点放入队列
     // 4，直到队列变空
 
+    public static void bfs(Node node){
+        if(node==null){
+            return;
+        }
+        Queue<Node> queue = new LinkedList<>();
+        Set<Node> set = new HashSet<>();
+        queue.add(node);
+        set.add(node);
+        while (!queue.isEmpty()){
+            Node cur = queue.poll();
+            System.out.println(cur.value);
+            for (Node next : cur.nexts) {
+                if (!set.contains(next)) {
+                    set.add(next);
+                    queue.add(next);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Node head = new Node(1);
+        Node node2 = new Node(2);
+        Node node3 = new Node(3);
+        Node node4 = new Node(4);
+        Node node5 = new Node(5);
+        head.nexts.add(node2);
+        head.nexts.add(node3);
+        head.nexts.add(node4);
+        node2.nexts.add(node5);
+        bfs(head);
+    }
 
 }
