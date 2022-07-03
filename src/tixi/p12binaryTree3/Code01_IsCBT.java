@@ -85,12 +85,7 @@ public class Code01_IsCBT {
         }
         Info leftInfo = process(X.left);
         Info rightInfo = process(X.right);
-
-
-
         int height = Math.max(leftInfo.height, rightInfo.height) + 1;
-
-
         boolean isFull = leftInfo.isFull
                 &&
                 rightInfo.isFull

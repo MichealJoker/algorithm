@@ -20,9 +20,9 @@ public class miaoshenshi implements Runnable{
     int page;
 
     public static void main(String[] args) {
-        String title= "[てこめんち] パチュリー・ノーレッジ快発記録II";
-        String photo = "https://i1.qthcdn.xyz/galleries/2054176/";
-        int num = 30;
+        String title= "[ぷちめいぷる (ひさぎ)] 後輩男子に寝取られSEX 3 [中国翻訳] [DL版]";
+        String photo = "https://i1.zspcdn.xyz/galleries/2111977/";
+        int num = 24;
         ExecutorService executorService = Executors.newFixedThreadPool(4);
         miaoshenshi m1 = new miaoshenshi();
         m1.name = title;

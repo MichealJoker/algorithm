@@ -21,6 +21,13 @@ public class Code3InsertSort extends BaseCase {
         }
     }
 
+//    for (int i = 0; i < arr.length - 1; i++) {
+//        for (int j = arr.length - 1; j >= 1; j--) {
+//            if (arr[j] < arr[j - 1]) {
+//                swap(arr, j, j - 1);
+//            }
+//        }
+//    }
 
     public static void main(String[] args) throws Exception {
         Code3InsertSort c3 = new Code3InsertSort();
